@@ -27,5 +27,9 @@ var ARTICLES = [
   { slug: 'pokupka-nedvizhimosti-ispaniya', title: 'Покупка недвижимости в Испании: пошаговый гид',             tag: 'Недвижимость · Инвестиции', cat: 'life',  time: 9 },
   // Семья / Социальное
   { slug: 'shkola-deti-ispaniya',       title: 'Как записать ребёнка в школу в Испании',                        tag: 'Дети · Образование',      cat: 'social',  time: 7 },
-  { slug: 'socialnye-posobiya-ispaniya', title: 'Социальные пособия в Испании для украинцев 2026',              tag: 'Пособия · Социалка',      cat: 'social',  time: 8 }
+  { slug: 'socialnye-posobiya-ispaniya', title: 'Социальные пособия в Испании для украинцев 2026',              tag: 'Пособия · Социалка',      cat: 'social',  time: 8 },
+  // Новые — апрель 2026
+  { slug: 'certificado-empadronamiento', title: 'Certificado de empadronamiento: как получить выписку из падрона', tag: 'Документы',              cat: 'docs',    time: 6 },
+  { slug: 'arraigo-laboral-ispaniya',   title: 'Arraigo laboral — ВНЖ через 2 года работы в Испании',           tag: 'ВНЖ',                     cat: 'vnzh',    time: 7 },
+  { slug: 'seguro-hogar-ispaniya',      title: 'Страховка жилья в Испании: как выбрать seguro de hogar',        tag: 'Жильё · Страховка',       cat: 'life',    time: 6 }
 ];
