@@ -56,6 +56,35 @@
     .comparison-table th { background: #1F2638; color: #C4952A; font-weight: 700; }
     .comparison-table td { color: #8896B0; }
     .comparison-table tr:hover { background: #1F2638; }
+
+    .related-section { margin: 0; }
+    .related-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6B7A96;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      margin-top: 0;
+      display: block;
+    }
+    .rel-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid #2D3650;
+      background: #1F2638;
+      color: #EDF1F8;
+      transition: background 0.15s, transform 0.12s;
+      margin-bottom: 8px;
+    }
+    .rel-card:hover { background: #263045; transform: translateX(3px); }
+    .rel-card .article-tag { margin-bottom: 2px; font-size: 10px; }
+    .rel-card-title { font-size: 14px; font-weight: 600; color: #EDF1F8; line-height: 1.35; }
+    .rel-card-meta  { font-size: 11px; color: #4A5570; margin-top: 2px; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F3TB9QMLY"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8F3TB9QMLY');</script>
@@ -320,6 +349,8 @@
 
     <p>Но прежде чем открывать SL, убедитесь, что это нужно именно вам. Часто autónomo проще и дешевле, особенно в первый год.</p>
 
+    <div class="related-section" id="related-articles"></div>
+
     <div class="divider"></div>
     <div class="cta-block">
       <div class="cta-title">Помогаем с открытием SL и autónomo</div>
@@ -329,5 +360,27 @@
     </div>
     <div class="footer">WhatsApp <span>+34 641 048 296</span> · EASY SPAIN SOLUTIONS</div>
   </div>
+  <script src="/blog/articles-data.js"></script>
+  <script>
+  (function(){
+    var slug = location.pathname.split('/').pop().replace('.html','');
+    var cur = ARTICLES.find(function(a){return a.slug===slug;});
+    if(!cur) return;
+    // same-category first, fall back to any articles
+    var pool = ARTICLES.filter(function(a){return a.cat===cur.cat && a.slug!==slug;});
+    if(pool.length < 2) pool = ARTICLES.filter(function(a){return a.slug!==slug;});
+    var related = pool.slice(0,3);
+    if(!related.length) return;
+    var h = '<div class="divider"></div><span class="related-label">Читайте также</span>';
+    related.forEach(function(a){
+      h += '<a class="rel-card" href="/blog/'+a.slug+'.html">';
+      h += '<span class="article-tag">'+a.tag+'</span>';
+      h += '<span class="rel-card-title">'+a.title+'</span>';
+      h += '<span class="rel-card-meta">~'+a.time+' мин чтения</span>';
+      h += '</a>';
+    });
+    document.getElementById('related-articles').innerHTML = h;
+  })();
+  </script>
 </body>
 </html>

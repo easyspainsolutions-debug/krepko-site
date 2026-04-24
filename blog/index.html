@@ -166,6 +166,29 @@
       margin-top: 2px;
     }
 
+    .filter-bar {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .filter-btn {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #2D3650;
+      background: #1F2638;
+      color: #7B8BA8;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-btn:hover { color: #C4952A; border-color: #C4952A; }
+    .filter-btn.active { background: #C4952A; border-color: #C4952A; color: #0F1117; }
+
+    .article-card.hidden { display: none; }
+
     .divider {
       width: 100%;
       height: 1px;
@@ -252,142 +275,153 @@
     <div class="blog-heading">Полезные статьи</div>
     <div class="blog-sub">Честные гайды о жизни и документах в Испании — для украинцев и русскоязычных. Без воды, только практика.</div>
 
+
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">Все <span id="cnt-all"></span></button>
+      <button class="filter-btn" data-filter="vnzh">ВНЖ</button>
+      <button class="filter-btn" data-filter="docs">Документы</button>
+      <button class="filter-btn" data-filter="finance">Финансы</button>
+      <button class="filter-btn" data-filter="work">Работа</button>
+      <button class="filter-btn" data-filter="life">Жильё</button>
+      <button class="filter-btn" data-filter="social">Семья</button>
+    </div>
+
     <div class="divider"></div>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/vnzh-ispaniya.html">
+    <a class="article-card" data-cat="vnzh" href="https://easyspain.solutions/blog/vnzh-ispaniya.html">
       <span class="article-tag">ВНЖ · Статус</span>
       <span class="article-title">Как получить ВНЖ в Испании: полный гид для украинцев и русскоязычных</span>
       <span class="article-desc">Все типы ВНЖ: временная защита, arraigo social, arraigo laboral, arraigo familiar. Документы, сроки, частые ошибки.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/bank-nerezident.html">
+    <a class="article-card" data-cat="finance" href="https://easyspain.solutions/blog/bank-nerezident.html">
       <span class="article-tag">Банк · Финансы</span>
       <span class="article-title">Как открыть счёт в испанском банке нерезиденту: пошаговый гайд</span>
       <span class="article-desc">Какие банки работают с нерезидентами, какие документы нужны, советы по CaixaBank, Sabadell и другим.</span>
       <span class="article-meta">~6 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/autonomo-ispaniya.html">
+    <a class="article-card" data-cat="work" href="https://easyspain.solutions/blog/autonomo-ispaniya.html">
       <span class="article-tag">Autónomo · Налоги</span>
       <span class="article-title">Регистрация autónomo в Испании: налоги, взносы, как работать легально</span>
       <span class="article-desc">Пошаговая регистрация, tarifa plana, квартальные декларации IRPF и IVA, реальные расходы самозанятого.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/apostil-perevod.html">
+    <a class="article-card" data-cat="docs" href="https://easyspain.solutions/blog/apostil-perevod.html">
       <span class="article-tag">Документы · Нотариус</span>
       <span class="article-title">Апостиль и присяжный перевод в Испании: что это и зачем нужно</span>
       <span class="article-desc">В чём разница между апостилем и присяжным переводом, где получить, сколько стоит и сколько ждать.</span>
       <span class="article-meta">~6 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/temporalnaya-zashita.html">
+    <a class="article-card" data-cat="vnzh" href="https://easyspain.solutions/blog/temporalnaya-zashita.html">
       <span class="article-tag">Временная защита · 2025</span>
       <span class="article-title">Временная защита в Испании 2025: продление, права, что делать украинцам</span>
       <span class="article-desc">Актуальный статус ВЗ, какие права она даёт, как продлить и когда переходить на обычный ВНЖ.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/nie-tie-ispaniya.html">
+    <a class="article-card" data-cat="docs" href="https://easyspain.solutions/blog/nie-tie-ispaniya.html">
       <span class="article-tag">Документы · Статус</span>
       <span class="article-title">NIE и TIE в Испании: в чём разница и как получить</span>
       <span class="article-desc">NIE — номер иностранца, TIE — карточка резидента. Как получить каждый, сколько стоит, типичные ошибки при записи и оплате тасы.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/padron-municipal.html">
+    <a class="article-card" data-cat="docs" href="https://easyspain.solutions/blog/padron-municipal.html">
       <span class="article-tag">Документы · Регистрация</span>
       <span class="article-title">Прописка в Испании (padrón municipal): зачем нужна и как оформить</span>
       <span class="article-desc">Почему падрон — ключевой документ для медицины, школы и ВНЖ. Как записаться, что принести и можно ли без официального договора аренды.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/meditsinskaya-strahovka-ispaniya.html">
+    <a class="article-card" data-cat="life" href="https://easyspain.solutions/blog/meditsinskaya-strahovka-ispaniya.html">
       <span class="article-tag">Страховка · Медицина</span>
       <span class="article-title">Медицинская страховка в Испании: государственная и частная</span>
       <span class="article-desc">Tarjeta sanitaria — кто имеет право бесплатно, Sanitas, Adeslas, Asisa — цены и плюсы частной страховки, требования для визы.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/pokupka-nedvizhimosti-ispaniya.html">
+    <a class="article-card" data-cat="life" href="https://easyspain.solutions/blog/pokupka-nedvizhimosti-ispaniya.html">
       <span class="article-tag">Недвижимость · Инвестиции</span>
       <span class="article-title">Покупка недвижимости в Испании: пошаговый гид для иностранцев</span>
       <span class="article-desc">NIE, нотариус, реестр, налоги IVA и ITP, ипотека для нерезидентов 60–70% LTV, типичные ловушки при покупке.</span>
       <span class="article-meta">~9 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/perevod-deneg-ispaniya.html">
+    <a class="article-card" data-cat="finance" href="https://easyspain.solutions/blog/perevod-deneg-ispaniya.html">
       <span class="article-tag">Финансы · Переводы</span>
       <span class="article-title">Как перевести деньги в Испанию: Wise, SWIFT, наличные</span>
       <span class="article-desc">Сравниваем Wise, SWIFT, Revolut, Western Union и ввоз наличных. Комиссии, лимиты, правила декларирования и что делать, если банк заморозил перевод.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/neobanki-ispaniya.html">
+    <a class="article-card" data-cat="finance" href="https://easyspain.solutions/blog/neobanki-ispaniya.html">
       <span class="article-tag">Финансы · Необанки</span>
       <span class="article-title">Необанки в Испании 2026: Wise, Revolut, N26 для нерезидентов и украинцев</span>
       <span class="article-desc">Сравниваем Wise, Revolut, N26 и Bunq: комиссии, лимиты, карты, IBAN и что подойдёт без NIE. Реальный опыт.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/arenda-zhilya-ispaniya.html">
+    <a class="article-card" data-cat="life" href="https://easyspain.solutions/blog/arenda-zhilya-ispaniya.html">
       <span class="article-tag">Жильё · Аренда</span>
       <span class="article-title">Как снять квартиру в Испании: полный гайд для украинцев и русскоязычных</span>
       <span class="article-desc">Idealista, Fotocasa, contrato de arrendamiento — как найти жильё, что проверить, как не попасть на мошенников и что делать без NIE.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/irpf-nalogi-ispaniya.html">
+    <a class="article-card" data-cat="work" href="https://easyspain.solutions/blog/irpf-nalogi-ispaniya.html">
       <span class="article-tag">Налоги · IRPF</span>
       <span class="article-title">IRPF и налоги в Испании 2026: кто платит, сколько и когда</span>
       <span class="article-desc">Ставки IRPF, декларация Renta, резиденты и нерезиденты, дедакции и как не попасть на штраф. Понятно для тех, кто не бухгалтер.</span>
       <span class="article-meta">~9 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/otkryt-sl-biznes-ispaniya.html">
+    <a class="article-card" data-cat="work" href="https://easyspain.solutions/blog/otkryt-sl-biznes-ispaniya.html">
       <span class="article-tag">Бизнес · SL</span>
       <span class="article-title">Как открыть SL (ООО) в Испании: пошаговый гайд 2026</span>
       <span class="article-desc">Sociedad Limitada vs autónomo, минимальный капитал €3000, нотариус, registro mercantil, счёт и типичные ошибки при регистрации.</span>
       <span class="article-meta">~9 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/viza-tsifrovogo-nomada-ispaniya.html">
+    <a class="article-card" data-cat="vnzh" href="https://easyspain.solutions/blog/viza-tsifrovogo-nomada-ispaniya.html">
       <span class="article-tag">Виза · Цифровой номад</span>
       <span class="article-title">Виза цифрового номада в Испании 2026: требования, документы, подводные камни</span>
       <span class="article-desc">Ley Startups, минимальный доход, список документов, сроки, разница с autónomo и как подать заявку без ошибок.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/vossoedineniye-semi-ispaniya.html">
+    <a class="article-card" data-cat="vnzh" href="https://easyspain.solutions/blog/vossoedineniye-semi-ispaniya.html">
       <span class="article-tag">ВНЖ · Семья</span>
       <span class="article-title">Воссоединение семьи в Испании: кто может и как</span>
       <span class="article-desc">Reagrupación familiar: кто имеет право, какие документы нужны, сроки и что делать, если отказали. Для резидентов с ВНЖ.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/socialnye-posobiya-ispaniya.html">
+    <a class="article-card" data-cat="social" href="https://easyspain.solutions/blog/socialnye-posobiya-ispaniya.html">
       <span class="article-tag">Пособия · Социалка</span>
       <span class="article-title">Социальные пособия в Испании для украинцев 2026: IMV, RMI, льготы</span>
       <span class="article-desc">Ingreso Mínimo Vital, Renta Mínima, пособие по безработице, льготы по ВЗ — кто имеет право и как подать заявку.</span>
       <span class="article-meta">~8 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/zamena-prav-ispaniya.html">
+    <a class="article-card" data-cat="docs" href="https://easyspain.solutions/blog/zamena-prav-ispaniya.html">
       <span class="article-tag">Документы · Права</span>
       <span class="article-title">Замена украинских водительских прав на испанские 2026</span>
       <span class="article-desc">Пошаговый гайд: DGT, tasa, экзамен или без него, сроки и типичные отказы при замене украинского удостоверения.</span>
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/tarjeta-sanitaria-ispaniya.html">
+    <a class="article-card" data-cat="life" href="https://easyspain.solutions/blog/tarjeta-sanitaria-ispaniya.html">
       <span class="article-tag">Медицина · Карта здоровья</span>
       <span class="article-title">Tarjeta Sanitaria в Испании: как получить медицинскую карту</span>
       <span class="article-desc">Кто имеет право на бесплатную карту здоровья, как записаться в centro de salud, документы и что делать до получения карты.</span>
       <span class="article-meta">~6 мин чтения</span>
     </a>
 
-    <a class="article-card" href="https://easyspain.solutions/blog/shkola-deti-ispaniya.html">
+    <a class="article-card" data-cat="social" href="https://easyspain.solutions/blog/shkola-deti-ispaniya.html">
       <span class="article-tag">Дети · Образование</span>
       <span class="article-title">Как записать ребёнка в школу в Испании: гайд для украинских родителей</span>
       <span class="article-desc">Matriculación, зоны, документы, языковые классы адаптации и как помочь ребёнку влиться в испанскую школу.</span>
@@ -415,5 +449,29 @@
 
   </div>
 
+
+  <script>
+  (function(){
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.article-card[data-cat]');
+
+    // Count per category
+    var counts = {all: cards.length};
+    cards.forEach(function(c){ var k = c.dataset.cat; counts[k] = (counts[k]||0)+1; });
+    var allEl = document.getElementById('cnt-all');
+    if(allEl) allEl.textContent = '(' + counts.all + ')';
+
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var f = btn.dataset.filter;
+        btns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        cards.forEach(function(c){
+          c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
