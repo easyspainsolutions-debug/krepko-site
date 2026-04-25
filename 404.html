@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена — EasySpain</title>
+  <meta name="description" content="Запрашиваемая страница не найдена. Вернитесь на главную или перейдите в блог EasySpain.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://easyspain.solutions/404.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F3TB9QMLY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8F3TB9QMLY');
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #171C28;
+      color: #EDF1F8;
+      font-family: -apple-system, 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 32px 20px 48px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* 404 number */
+    .error-code {
+      font-size: 96px;
+      font-weight: 900;
+      color: #C4952A;
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 8px;
+      opacity: 0.9;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: #C4952A;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .logo span {
+      color: #7B8BA8;
+      font-weight: 400;
+    }
+
+    /* Heading */
+    .heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: #EDF1F8;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 14px;
+      color: #7B8BA8;
+      text-align: center;
+      line-height: 1.6;
+      max-width: 320px;
+      margin-bottom: 28px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: 13px;
+      background: #C4952A;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F1117;
+      transition: background 0.15s, transform 0.12s;
+    }
+    .btn-primary:hover  { background: #D4A535; transform: translateY(-1px); }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: 13px;
+      background: #1F2638;
+      border: 1px solid #2A3350;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #EDF1F8;
+      transition: background 0.15s, transform 0.12s;
+    }
+    .btn-secondary:hover  { background: #263045; transform: translateY(-1px); }
+    .btn-secondary:active { transform: scale(0.98); }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #252E45;
+      margin: 20px 0;
+    }
+
+    /* Section label */
+    .section-label {
+      width: 100%;
+      font-size: 10px;
+      font-weight: 700;
+      color: #4A5570;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    /* Article cards */
+    .blog-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 13px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #1F2638;
+      border: 1px solid #2A3350;
+      transition: border-color 0.15s, transform 0.12s;
+    }
+    .article-card:hover {
+      border-color: rgba(196, 149, 42, 0.35);
+      transform: translateY(-1px);
+    }
+    .article-card:active { transform: scale(0.99); }
+
+    .article-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: #C4952A;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .article-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #C8D0E0;
+      line-height: 1.4;
+    }
+
+    /* WhatsApp hint */
+    .wa-hint {
+      font-size: 13px;
+      color: #7B8BA8;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .wa-hint a {
+      color: #25D366;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .wa-hint a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="logo">Easy<span>Spain</span></div>
+
+    <div class="error-code">404</div>
+
+    <h1 class="heading">Страница не найдена</h1>
+    <p class="subheading">Возможно, ссылка устарела или была перемещена. Попробуйте вернуться на главную.</p>
+
+    <div class="btn-row">
+      <a href="/" class="btn-primary">На главную</a>
+      <a href="/blog/index.html" class="btn-secondary">Читать блог</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Популярные статьи</div>
+
+    <div class="blog-cards">
+      <a href="/blog/vnzh-ispaniya.html" class="article-card">
+        <span class="article-tag">ВНЖ</span>
+        <span class="article-title">ВНЖ в Испании: всё, что нужно знать в 2025 году</span>
+      </a>
+      <a href="/blog/bank-nerezident.html" class="article-card">
+        <span class="article-tag">Банки</span>
+        <span class="article-title">Как открыть счёт в испанском банке нерезиденту</span>
+      </a>
+      <a href="/blog/nie-tie-ispaniya.html" class="article-card">
+        <span class="article-tag">Документы</span>
+        <span class="article-title">NIE и TIE в Испании: в чём разница и как получить</span>
+      </a>
+      <a href="/blog/autonomo-ispaniya.html" class="article-card">
+        <span class="article-tag">Работа</span>
+        <span class="article-title">Autónomo в Испании: регистрация, налоги, взносы</span>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="wa-hint">Или напишите нам напрямую&nbsp;&nbsp;<a href="https://wa.me/34641048296" target="_blank" rel="noopener">💬 WhatsApp</a></p>
+
+  </div>
+</body>
+</html>
