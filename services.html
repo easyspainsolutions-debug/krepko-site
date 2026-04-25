@@ -980,13 +980,15 @@
     @media (min-width: 900px) {
       body {
         padding: 0;
-        align-items: stretch;
+        /* align-items: center остаётся (унаследовано) — .page центрируется,
+           а header/footer растягиваем через align-self: stretch */
       }
 
       /* Sticky desktop header */
       .desktop-header {
         display: block;
         width: 100%;
+        align-self: stretch;
         background: rgba(15, 19, 30, 0.85);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -1191,6 +1193,7 @@
       .desktop-footer {
         display: block;
         width: 100%;
+        align-self: stretch;
         background: #0F141F;
         border-top: 1px solid #252E45;
         padding: 48px 32px 24px;
