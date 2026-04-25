@@ -612,12 +612,6 @@
     }
 
     /* ── Footer ── */
-    .page-footer {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
     .contact-row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -661,15 +655,6 @@
     .contact-label { display: flex; flex-direction: column; gap: 1px; }
     .contact-title { font-size: 12px; font-weight: 700; color: #EDF1F8; line-height: 1.2; }
     .contact-sub   { font-size: 9.5px; color: #A8B5CC; line-height: 1.2; }
-
-    .footer-note {
-      font-size: 11px;
-      color: #7E8FA8;
-      text-align: center;
-      margin-top: 8px;
-    }
-    .footer-note span { color: #A8B5CC; }
-
     /* ── Tier table (нотариус) ── */
     .tier-table {
       border: 1px solid #2D3650;
@@ -940,41 +925,13 @@
     .service-card.partner .card-icon-svg { stroke: #8B9BB5; opacity: 0.85; }
 
     /* ── Sticky WA CTA на мобиле ── */
-    .sticky-cta {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 12px 16px;
-      background: #25D366;
-      color: #0F1117;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
-      transition: transform 0.12s, box-shadow 0.15s;
-    }
-    .sticky-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
-    .sticky-cta:active { transform: scale(0.97); }
-    .sticky-cta-icon { font-size: 16px; line-height: 1; }
     @media (max-width: 360px) {
-      .sticky-cta-text { display: none; }
-      .sticky-cta { padding: 14px; }
     }
 
     /* ─────────────────────────────────────
        Desktop header & footer (hidden on mobile)
        ───────────────────────────────────── */
     .desktop-header,
-    .desktop-footer { display: none; }
-
     /* ─────────────────────────────────────
        DESKTOP ADAPTATION (≥900px)
        Не меняет мобильную верстку — только переопределения для широких экранов
@@ -1020,25 +977,6 @@
         align-items: center;
         gap: 10px;
         text-decoration: none;
-      }
-      .dh-logo-mark {
-        width: 36px;
-        height: 36px;
-        background: #C4952A;
-        color: #0F1117;
-        border-radius: 9px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 14px;
-        letter-spacing: -0.3px;
-      }
-      .dh-logo-name {
-        font-size: 17px;
-        font-weight: 800;
-        color: #EDF1F8;
-        letter-spacing: -0.3px;
       }
       .dh-nav {
         display: flex;
@@ -1227,40 +1165,13 @@
       .blog-cross-link { font-size: 14px; padding: 14px 16px; }
 
       /* Скрываем мобильный footer (есть полноценный desktop-footer) */
-      .page-footer { display: none; }
-
       /* Скрываем sticky CTA на десктопе */
-      .sticky-cta { display: none !important; }
-
       /* ── DESKTOP FOOTER ── */
-      .desktop-footer {
-        display: block;
-        width: 100%;
-        align-self: stretch;
-        background: #0F141F;
-        border-top: 1px solid #252E45;
-        padding: 56px 32px 28px;
-        margin-top: 24px;
-      }
-      .df-inner {
-        max-width: 1140px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.7fr 1fr 1fr 1.5fr;
-        gap: 56px;
-      }
       .df-brand .df-logo-wrap {
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 14px;
-      }
-      .df-tagline {
-        color: #94A3BD;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 16px;
-        max-width: 280px;
       }
       .df-flags { font-size: 18px; letter-spacing: 0.06em; }
       .df-col h4 {
@@ -1280,17 +1191,6 @@
         transition: color 0.15s;
       }
       .df-col a:hover { color: #C4952A; }
-      .df-bottom {
-        max-width: 1140px;
-        margin: 40px auto 0;
-        padding-top: 24px;
-        border-top: 1px solid #1E2638;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #5A6A84;
-        font-size: 12px;
-      }
       .df-bottom .df-bottom-right { color: #7E8FA8; }
     }
 
