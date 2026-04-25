@@ -4,6 +4,13 @@
    Полная ширина окна независимо от body-padding.
    ============================================================ */
 
+/* Гарантируем что body не оставляет зазор СНИЗУ под footer'ом.
+   В паре с body:has(> header.site-nav) { padding-top: 0 } из site-nav.css
+   это даёт одинаковую высоту footer на всех страницах. */
+body:has(> footer.site-footer) {
+  padding-bottom: 0 !important;
+}
+
 .site-footer {
   /* Полная ширина окна, игнорируем body-padding */
   width: 100vw;
