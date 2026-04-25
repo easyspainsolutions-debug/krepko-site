@@ -978,10 +978,18 @@
        Не меняет мобильную верстку — только переопределения для широких экранов
        ───────────────────────────────────── */
     @media (min-width: 900px) {
+      /* ─── Единая type-scale и spacing для десктопа ───
+         Шкала шрифтов: 12 / 14 / 15 / 17 / 24 / 30 / 42
+         Секции отделены константой --section-gap = 56px */
+      :root {
+        --section-gap: 56px;
+        --inner-gap: 18px;
+      }
+
       body {
         padding: 0;
-        /* align-items: center остаётся (унаследовано) — .page центрируется,
-           а header/footer растягиваем через align-self: stretch */
+        font-size: 15px;
+        line-height: 1.6;
       }
 
       /* Sticky desktop header */
@@ -1071,93 +1079,124 @@
         gap: 0;
       }
 
-      /* Hero крупнее */
-      .page-header { margin-bottom: 32px; max-width: 760px; }
+      /* ── Hero ── */
+      .page-header { margin-bottom: var(--section-gap); max-width: 760px; }
       .page-header h1 { font-size: 42px; line-height: 1.15; letter-spacing: -1px; }
-      .page-header .subtitle { font-size: 16px; line-height: 1.65; }
+      .page-header .subtitle { font-size: 17px; line-height: 1.6; }
 
-      /* Identity line — крупнее */
+      /* ── Identity line ── */
       .identity-line {
-        margin: -24px 0 28px;
+        margin: calc(-1 * var(--section-gap) + 16px) 0 var(--section-gap);
         padding: 14px 18px;
-        font-size: 13.5px;
+        font-size: 14px;
         gap: 8px 14px;
       }
 
-      /* Value prop баннер */
-      .value-prop { padding: 18px 22px; margin-bottom: 28px; }
-      .value-prop-icon { font-size: 28px; }
-      .value-prop-text strong { font-size: 16px; }
-      .value-prop-text span { font-size: 13.5px; }
+      /* ── Value prop ── */
+      .value-prop {
+        padding: 18px 22px;
+        margin-bottom: var(--section-gap);
+      }
+      .value-prop-icon { font-size: 26px; }
+      .value-prop-text strong { font-size: 17px; }
+      .value-prop-text span { font-size: 14px; }
 
-      /* Stats strip — крупнее */
-      .stats-strip { gap: 12px; margin-bottom: 18px; }
+      /* ── Stats strip ── */
+      .stats-strip {
+        gap: 12px;
+        margin-bottom: var(--section-gap);
+      }
       .stat { padding: 18px 8px; }
       .stat-num { font-size: 24px; }
-      .stat-label { font-size: 11px; }
+      .stat-label { font-size: 12px; }
 
-      /* Guarantee badge */
-      .guarantee-badge { padding: 16px 20px; margin-bottom: 32px; }
-      .guarantee-icon { font-size: 28px; }
-      .guarantee-text strong { font-size: 15.5px; }
-      .guarantee-text span { font-size: 13px; }
+      /* ── Guarantee badge ── */
+      .guarantee-badge {
+        padding: 16px 20px;
+        margin-bottom: var(--section-gap);
+      }
+      .guarantee-icon { font-size: 26px; }
+      .guarantee-text strong { font-size: 17px; }
+      .guarantee-text span { font-size: 14px; }
 
-      /* Section label — чуть крупнее */
+      /* ── Section label (caption) ── */
       .section-label {
-        font-size: 11px;
-        margin: 8px 0 18px;
+        font-size: 12px;
+        margin: 0 0 var(--inner-gap);
       }
 
-      /* SERVICES GRID 2 columns */
+      /* ── SERVICES GRID 2 columns ── */
       .services-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 16px;
+        gap: 18px;
+        margin-bottom: var(--section-gap);
       }
       .service-card { display: flex; flex-direction: column; }
       .service-card .card-body { display: flex; flex-direction: column; height: 100%; }
-      /* Кнопка прижата к низу карточки — выравнивание высот */
       .service-card .btn-card { margin-top: auto; }
+      .card-title { font-size: 17px; }
+      .card-bullets li { font-size: 14px; }
+      .card-bullets { gap: 8px; margin-bottom: 18px; }
+      .badge-recommended,
+      .badge-partner { font-size: 11px; }
+      .price-amount { font-size: 24px; }
+      .price-amount.partner { font-size: 22px; }
+      .price-amount.by-request { font-size: 14px; }
+      .price-label { font-size: 12px; }
+      .tier-row { font-size: 14px; padding: 11px 14px; }
+      .tier-price { font-size: 15px; }
+      .bank-item-name { font-size: 14px; }
+      .bank-item-sub { font-size: 12px; }
+      .bank-item-price { font-size: 15px; }
+      .extra-note { font-size: 12px; padding: 10px 12px; }
+      .btn-card { font-size: 14px; padding: 14px 16px; }
       /* partners-note — на всю ширину сетки */
       .partners-note {
         grid-column: 1 / -1;
         font-size: 12px;
         padding: 14px 18px;
+        margin: 4px 0 0;
       }
 
-      /* Why-me — 3 колонки */
+      /* ── Why-me — 3 колонки ── */
+      .why-section { margin-bottom: var(--section-gap); }
       .why-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
       }
+      .why-text strong { font-size: 15px; }
+      .why-text span { font-size: 14px; line-height: 1.55; }
 
-      /* Process — 3 колонки */
+      /* ── Process — 3 колонки ── */
+      .process-section { margin-bottom: var(--section-gap); }
       .process-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
       }
+      .process-text strong { font-size: 15px; }
+      .process-text span { font-size: 14px; line-height: 1.55; }
 
-      /* Cities row — крупнее */
+      /* ── Cities row ── */
       .cities-row {
         font-size: 14px;
         padding: 22px 0;
-        margin: 28px 0 36px;
+        margin: 0 0 var(--section-gap);
       }
-      .cities-row strong { font-size: 11px; margin-bottom: 8px; }
+      .cities-row strong { font-size: 12px; margin-bottom: 8px; }
 
-      /* FAQ — 2 колонки: title слева, items справа */
+      /* ── FAQ — title слева, items справа ── */
       .faq-section {
         display: grid;
         grid-template-columns: 280px 1fr;
         gap: 56px;
         align-items: start;
-        margin-bottom: 48px;
+        margin-bottom: var(--section-gap);
       }
       .faq-section > .section-label {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 800;
         color: #EDF1F8;
         text-transform: none;
@@ -1174,14 +1213,16 @@
       }
       .faq-list { gap: 10px; }
       .faq-q { font-size: 15px; padding: 18px 20px; }
-      .faq-a-inner { font-size: 14px; padding: 0 20px 18px; }
+      .faq-a-inner { font-size: 14px; padding: 0 20px 18px; line-height: 1.65; }
 
-      /* Blog cross-strip — 3 колонки */
+      /* ── Blog cross-strip ── */
+      .blog-cross-strip { margin-bottom: var(--section-gap); }
       .blog-cross-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
       }
+      .blog-cross-link { font-size: 14px; padding: 14px 16px; }
 
       /* Скрываем мобильный footer (есть полноценный desktop-footer) */
       .page-footer { display: none; }
@@ -1189,21 +1230,22 @@
       /* Скрываем sticky CTA на десктопе */
       .sticky-cta { display: none !important; }
 
-      /* DESKTOP FOOTER */
+      /* ── DESKTOP FOOTER ── */
       .desktop-footer {
         display: block;
         width: 100%;
         align-self: stretch;
         background: #0F141F;
         border-top: 1px solid #252E45;
-        padding: 48px 32px 24px;
+        padding: 56px 32px 28px;
+        margin-top: 24px;
       }
       .df-inner {
         max-width: 1140px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1.7fr 1fr 1fr 1.5fr;
-        gap: 48px;
+        gap: 56px;
       }
       .df-brand .df-logo-wrap {
         display: flex;
@@ -1213,32 +1255,32 @@
       }
       .df-tagline {
         color: #94A3BD;
-        font-size: 13px;
-        line-height: 1.65;
-        margin-bottom: 14px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 16px;
         max-width: 280px;
       }
       .df-flags { font-size: 18px; letter-spacing: 0.06em; }
       .df-col h4 {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         color: #7E8FA8;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
       }
       .df-col a {
         display: block;
         color: #A8B5CC;
         text-decoration: none;
-        font-size: 13px;
-        padding: 5px 0;
+        font-size: 14px;
+        padding: 6px 0;
         transition: color 0.15s;
       }
       .df-col a:hover { color: #C4952A; }
       .df-bottom {
         max-width: 1140px;
-        margin: 36px auto 0;
+        margin: 40px auto 0;
         padding-top: 24px;
         border-top: 1px solid #1E2638;
         display: flex;
