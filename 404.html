@@ -139,6 +139,63 @@
     .btn-cta .btn-sub   { color: rgba(15,17,23,0.55); }
     .btn-cta:hover { background: #D4A535; border-color: #D4A535; }
 
+    /* Home pill button with animated glow */
+    .home-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 22px;
+    }
+    .home-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      background: #C4952A;
+      color: #0F1117;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      box-shadow: 0 0 24px rgba(196,149,42,0.45);
+      transition: transform 0.15s, background 0.15s;
+      z-index: 1;
+    }
+    .home-btn:hover  { background: #D4A535; transform: translateY(-1px); }
+    .home-btn:active { transform: scale(0.98); }
+
+    .home-btn::before,
+    .home-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 2px solid #C4952A;
+      pointer-events: none;
+      z-index: -1;
+      animation: ripple 2.4s ease-out infinite;
+    }
+    .home-btn::after { animation-delay: 1.2s; }
+
+    @keyframes ripple {
+      0%   { transform: scale(1);    opacity: 0.65; }
+      100% { transform: scale(1.55); opacity: 0;    }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 18px rgba(196,149,42,0.35); }
+      50%      { box-shadow: 0 0 36px rgba(196,149,42,0.65); }
+    }
+    .home-btn { animation: pulse 2.4s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-btn,
+      .home-btn::before,
+      .home-btn::after { animation: none; }
+    }
+
     .btn-ghost {
       background: transparent;
       border-color: #252E45;
@@ -178,13 +235,10 @@
       Возможно, страница переехала — как и вы в Испанию. Ссылка устарела или адрес ошибочный. Загляните в основные разделы — там всё, что вам нужно.
     </div>
 
-    <!-- Main CTA -->
-    <a class="btn btn-cta" href="/">
-      <span class="btn-icon">🏠</span>
-      <div class="btn-inner">
-        <span class="btn-title">&#8592; На главную</span>
-      </div>
-    </a>
+    <!-- Main CTA: pill button with animated glow -->
+    <div class="home-wrap">
+      <a class="home-btn" href="/">&#8592; На главную</a>
+    </div>
 
     <!-- Section label -->
     <div class="section-label">Куда пойти</div>
