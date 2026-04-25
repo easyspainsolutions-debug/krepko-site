@@ -966,9 +966,313 @@
       .sticky-cta-text { display: none; }
       .sticky-cta { padding: 14px; }
     }
+
+    /* ─────────────────────────────────────
+       Desktop header & footer (hidden on mobile)
+       ───────────────────────────────────── */
+    .desktop-header,
+    .desktop-footer { display: none; }
+
+    /* ─────────────────────────────────────
+       DESKTOP ADAPTATION (≥900px)
+       Не меняет мобильную верстку — только переопределения для широких экранов
+       ───────────────────────────────────── */
+    @media (min-width: 900px) {
+      body {
+        padding: 0;
+        align-items: stretch;
+      }
+
+      /* Sticky desktop header */
+      .desktop-header {
+        display: block;
+        width: 100%;
+        background: rgba(15, 19, 30, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid #252E45;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .dh-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 14px 32px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      .dh-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .dh-logo-mark {
+        width: 36px;
+        height: 36px;
+        background: #C4952A;
+        color: #0F1117;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+      }
+      .dh-logo-name {
+        font-size: 17px;
+        font-weight: 800;
+        color: #EDF1F8;
+        letter-spacing: -0.3px;
+      }
+      .dh-nav {
+        display: flex;
+        gap: 28px;
+        margin-left: 24px;
+        flex: 1;
+      }
+      .dh-nav a {
+        color: #A8B5CC;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.15s;
+      }
+      .dh-nav a:hover { color: #EDF1F8; }
+      .dh-nav a.active { color: #C4952A; font-weight: 600; }
+      .dh-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #25D366;
+        color: #0F1117;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.12s, background 0.15s;
+        white-space: nowrap;
+      }
+      .dh-cta:hover { transform: translateY(-1px); background: #2BDA6E; }
+
+      /* Скрываем мобильный breadcrumb (есть полноценный header) */
+      .nav-breadcrumb { display: none; }
+
+      /* Шире контейнер */
+      .page {
+        max-width: 1140px;
+        padding: 32px 32px 56px;
+        gap: 0;
+      }
+
+      /* Hero крупнее */
+      .page-header { margin-bottom: 32px; max-width: 760px; }
+      .page-header h1 { font-size: 42px; line-height: 1.15; letter-spacing: -1px; }
+      .page-header .subtitle { font-size: 16px; line-height: 1.65; }
+
+      /* Identity line — крупнее */
+      .identity-line {
+        margin: -24px 0 28px;
+        padding: 14px 18px;
+        font-size: 13.5px;
+        gap: 8px 14px;
+      }
+
+      /* Value prop баннер */
+      .value-prop { padding: 18px 22px; margin-bottom: 28px; }
+      .value-prop-icon { font-size: 28px; }
+      .value-prop-text strong { font-size: 16px; }
+      .value-prop-text span { font-size: 13.5px; }
+
+      /* Stats strip — крупнее */
+      .stats-strip { gap: 12px; margin-bottom: 18px; }
+      .stat { padding: 18px 8px; }
+      .stat-num { font-size: 24px; }
+      .stat-label { font-size: 11px; }
+
+      /* Guarantee badge */
+      .guarantee-badge { padding: 16px 20px; margin-bottom: 32px; }
+      .guarantee-icon { font-size: 28px; }
+      .guarantee-text strong { font-size: 15.5px; }
+      .guarantee-text span { font-size: 13px; }
+
+      /* Section label — чуть крупнее */
+      .section-label {
+        font-size: 11px;
+        margin: 8px 0 18px;
+      }
+
+      /* SERVICES GRID 2 columns */
+      .services-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .service-card { display: flex; flex-direction: column; }
+      .service-card .card-body { display: flex; flex-direction: column; height: 100%; }
+      /* Кнопка прижата к низу карточки — выравнивание высот */
+      .service-card .btn-card { margin-top: auto; }
+      /* partners-note — на всю ширину сетки */
+      .partners-note {
+        grid-column: 1 / -1;
+        font-size: 12px;
+        padding: 14px 18px;
+      }
+
+      /* Why-me — 3 колонки */
+      .why-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      /* Process — 3 колонки */
+      .process-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      /* Cities row — крупнее */
+      .cities-row {
+        font-size: 14px;
+        padding: 22px 0;
+        margin: 28px 0 36px;
+      }
+      .cities-row strong { font-size: 11px; margin-bottom: 8px; }
+
+      /* FAQ — 2 колонки: title слева, items справа */
+      .faq-section {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 56px;
+        align-items: start;
+        margin-bottom: 48px;
+      }
+      .faq-section > .section-label {
+        font-size: 28px;
+        font-weight: 800;
+        color: #EDF1F8;
+        text-transform: none;
+        letter-spacing: -0.6px;
+        margin: 0;
+        position: sticky;
+        top: 88px;
+        padding: 0;
+      }
+      .faq-section > .section-label .label-dot {
+        width: 10px;
+        height: 10px;
+        margin-right: 12px;
+      }
+      .faq-list { gap: 10px; }
+      .faq-q { font-size: 15px; padding: 18px 20px; }
+      .faq-a-inner { font-size: 14px; padding: 0 20px 18px; }
+
+      /* Blog cross-strip — 3 колонки */
+      .blog-cross-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      /* Скрываем мобильный footer (есть полноценный desktop-footer) */
+      .page-footer { display: none; }
+
+      /* Скрываем sticky CTA на десктопе */
+      .sticky-cta { display: none !important; }
+
+      /* DESKTOP FOOTER */
+      .desktop-footer {
+        display: block;
+        width: 100%;
+        background: #0F141F;
+        border-top: 1px solid #252E45;
+        padding: 48px 32px 24px;
+      }
+      .df-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.7fr 1fr 1fr 1.5fr;
+        gap: 48px;
+      }
+      .df-brand .df-logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .df-tagline {
+        color: #94A3BD;
+        font-size: 13px;
+        line-height: 1.65;
+        margin-bottom: 14px;
+        max-width: 280px;
+      }
+      .df-flags { font-size: 18px; letter-spacing: 0.06em; }
+      .df-col h4 {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #7E8FA8;
+        margin-bottom: 14px;
+      }
+      .df-col a {
+        display: block;
+        color: #A8B5CC;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 5px 0;
+        transition: color 0.15s;
+      }
+      .df-col a:hover { color: #C4952A; }
+      .df-bottom {
+        max-width: 1140px;
+        margin: 36px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid #1E2638;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #5A6A84;
+        font-size: 12px;
+      }
+      .df-bottom .df-bottom-right { color: #7E8FA8; }
+    }
+
+    /* Большие десктопы — ещё чуть шире padding */
+    @media (min-width: 1280px) {
+      .dh-inner, .page, .df-inner, .df-bottom { padding-left: 40px; padding-right: 40px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- ── Desktop header (≥900px) ── -->
+  <header class="desktop-header" role="banner">
+    <div class="dh-inner">
+      <a href="/" class="dh-logo" aria-label="EasySpain — главная">
+        <span class="dh-logo-mark">ES</span>
+        <span class="dh-logo-name">EasySpain</span>
+      </a>
+      <nav class="dh-nav" aria-label="Главное меню">
+        <a href="/">Главная</a>
+        <a href="/services.html" class="active">Услуги</a>
+        <a href="/blog/">Блог</a>
+        <a href="#faq-section">FAQ</a>
+      </nav>
+      <a class="dh-cta" href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer">
+        💬 WhatsApp
+      </a>
+    </div>
+  </header>
 
   <div class="page">
 
@@ -1294,7 +1598,7 @@
     </section>
 
     <!-- ── FAQ ── -->
-    <section class="faq-section">
+    <section class="faq-section" id="faq-section">
       <div class="section-label"><span class="label-dot"></span>Частые вопросы</div>
 
       <div class="faq-list">
@@ -1449,6 +1753,47 @@
     </footer>
 
   </div>
+
+  <!-- ── Desktop footer (≥900px) ── -->
+  <footer class="desktop-footer" role="contentinfo">
+    <div class="df-inner">
+      <div class="df-col df-brand">
+        <div class="df-logo-wrap">
+          <span class="dh-logo-mark">ES</span>
+          <span class="dh-logo-name">EasySpain</span>
+        </div>
+        <p class="df-tagline">Документы в Испании под ключ. База в Аликанте, выезжаю по всей стране.</p>
+        <div class="df-flags" aria-label="Языки">🇪🇸 🇷🇺 🇺🇦 🇬🇧</div>
+      </div>
+      <div class="df-col">
+        <h4>Услуги</h4>
+        <a href="#notary">Нотариус</a>
+        <a href="#bank">Банк</a>
+        <a href="#translation">Перевод</a>
+        <a href="#legalization">Легализация</a>
+        <a href="#vnzh">ВНЖ (партнёры)</a>
+        <a href="#tax">Налоги (партнёры)</a>
+      </div>
+      <div class="df-col">
+        <h4>Навигация</h4>
+        <a href="/">Главная</a>
+        <a href="/services.html">Услуги</a>
+        <a href="/blog/">Блог — 27 статей</a>
+        <a href="#faq-section">Частые вопросы</a>
+      </div>
+      <div class="df-col">
+        <h4>Контакты</h4>
+        <a href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer">💬 WhatsApp +34 641 048 296</a>
+        <a href="mailto:easyspainsolutions@gmail.com">✉️ easyspainsolutions@gmail.com</a>
+        <a href="https://t.me/easyspainuaru" target="_blank" rel="noopener noreferrer">📣 @easyspainuaru</a>
+        <a href="https://t.me/EasySpainAdmin_bot" target="_blank" rel="noopener noreferrer">🤖 @EasySpainAdmin_bot</a>
+      </div>
+    </div>
+    <div class="df-bottom">
+      <span>© 2026 EASY SPAIN SOLUTIONS</span>
+      <span class="df-bottom-right">Daniil Pavlovskyi · Аликанте · 4 года в секторе</span>
+    </div>
+  </footer>
 
   <!-- ── Sticky WhatsApp CTA (mobile-friendly) ── -->
   <a class="sticky-cta" href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
