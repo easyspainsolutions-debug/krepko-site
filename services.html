@@ -458,19 +458,21 @@
     }
 
     .card-bullets li::before {
-      content: '✓';
-      color: #C4952A;
-      font-weight: 700;
-      font-size: 12px;
+      content: '';
+      width: 12px;
+      height: 12px;
       flex-shrink: 0;
-      margin-top: 1px;
+      margin-top: 4px;
+      background-color: #C4952A;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='5 12 10 17 19 7'/></svg>") center / contain no-repeat;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='5 12 10 17 19 7'/></svg>") center / contain no-repeat;
     }
 
-    .service-card.partner .card-bullets li::before { color: #8B9BB5; }
+    .service-card.partner .card-bullets li::before { background-color: #8B9BB5; }
     .service-card.partner .card-bullets li { color: #A8B5CC; }
 
     .card-bullets li.free-bullet::before {
-      color: #34C759;
+      background-color: #34C759;
     }
 
     .btn-card {
@@ -1242,7 +1244,7 @@
                 <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
                 <span class="card-title">Нотариус — доверенность</span>
               </div>
-              <span class="badge-recommended">★ Основная услуга</span>
+              <span class="badge-recommended"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9" fill="currentColor" stroke="currentColor"/></svg> Основная услуга</span>
             </div>
           </div>
           <div class="tier-table">
