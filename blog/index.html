@@ -225,6 +225,47 @@
       margin-top: -4px;
     }
 
+    /* Блок «предложить тему» — лёгкий, не перебивает основной CTA */
+    .suggest-block {
+      width: 100%;
+      background: rgba(196, 149, 42, 0.08);
+      border: 1px dashed rgba(196, 149, 42, 0.35);
+      border-radius: 11px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0 4px;
+    }
+    .suggest-block-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #EDF1F8;
+    }
+    .suggest-block-sub {
+      font-size: 13px;
+      color: #A8B5CC;
+      line-height: 1.5;
+    }
+    .suggest-block-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 9px 16px;
+      border-radius: 9px;
+      background: #C4952A;
+      color: #0F1117;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.12s;
+    }
+    .suggest-block-btn:hover {
+      background: #D6A636;
+      transform: translateY(-1px);
+    }
+
     .btn {
       display: flex;
       align-items: center;
@@ -429,6 +470,14 @@
     </a>
 
     <div class="divider"></div>
+
+    <div class="suggest-block">
+      <div class="suggest-block-title">💡 Не нашли свою тему?</div>
+      <div class="suggest-block-sub">Предложите, о чём написать — расскажите свою ситуацию или вопрос. Если тема актуальна — станет статьёй или постом в нашем Telegram-канале.</div>
+      <a class="suggest-block-btn" href="https://t.me/EasySpainAdmin_bot?start=suggest" target="_blank" rel="noopener noreferrer">
+        ✍️ Предложить тему
+      </a>
+    </div>
 
     <div class="cta-block">
       <div class="cta-block-title">Нужна помощь с документами?</div>
