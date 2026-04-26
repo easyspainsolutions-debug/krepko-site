@@ -609,21 +609,22 @@
     /* ── Trust Strip — 4 цифры в ряд ── */
     .trust-strip {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
       margin: 22px 20px 6px;
-      padding: 18px 8px;
+      padding: 16px 6px;
       background: rgba(31, 38, 56, 0.45);
       border: 1px solid #252E45;
       border-radius: 12px;
     }
-    .trust-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+    .trust-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; min-width: 0; }
     .trust-num {
-      font-size: 22px;
+      font-size: clamp(17px, 5vw, 22px);
       font-weight: 800;
       color: #C4952A;
       letter-spacing: -0.5px;
       line-height: 1;
+      white-space: nowrap;
       text-shadow: 0 0 14px rgba(196, 149, 42, 0.30);
     }
     .trust-label { font-size: 10px; color: #8896B0; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.04em; }
