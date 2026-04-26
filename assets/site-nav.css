@@ -86,7 +86,16 @@ body:has(> header.site-nav) {
 .site-nav__links a:hover { color: #EDF1F8; background: #1F2638; }
 .site-nav__links a.active {
   color: #C4952A;
-  background: rgba(196, 149, 42, 0.12);
+  background: rgba(196, 149, 42, 0.14);
+  box-shadow: 0 0 12px rgba(196, 149, 42, 0.28);
+}
+
+/* Контейнер «контактов справа» — WhatsApp + 2 Telegram-иконки */
+.site-nav__contacts {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .site-nav__wa {
@@ -110,7 +119,30 @@ body:has(> header.site-nav) {
   box-shadow: 0 0 14px rgba(78, 216, 138, 0.32);
 }
 .site-nav__wa-text { display: none; }
-.site-nav__wa-icon { font-size: 14px; }
+.site-nav__wa-icon { width: 16px; height: 16px; }
+
+/* Telegram-иконки (бот + канал) — компактные квадратные кнопки с blue-glow */
+.site-nav__tg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(34, 158, 217, 0.12);
+  border: 1px solid rgba(34, 158, 217, 0.30);
+  color: #5BB8E0;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.12s;
+  box-shadow: 0 0 10px rgba(34, 158, 217, 0.15);
+}
+.site-nav__tg:hover {
+  background: rgba(34, 158, 217, 0.22);
+  box-shadow: 0 0 14px rgba(34, 158, 217, 0.32);
+  transform: translateY(-1px);
+}
+.site-nav__tg svg { width: 18px; height: 18px; }
 
 /* Очень узкие экраны — спрячем «Главная» (лого уже ведёт туда) */
 @media (max-width: 359px) {

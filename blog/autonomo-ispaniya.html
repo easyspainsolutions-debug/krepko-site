@@ -319,9 +319,17 @@
       <a href="/services.html" data-page="services">Услуги</a>
       <a href="/blog/" data-page="blog">Блог</a>
     </nav>
-    <a class="site-nav__wa" href="https://wa.me/34641048296" rel="noopener">
-      <span class="site-nav__wa-icon">💬</span><span class="site-nav__wa-text">WhatsApp</span>
-    </a>
+    <div class="site-nav__contacts">
+      <a class="site-nav__wa" href="https://wa.me/34641048296" rel="noopener" aria-label="WhatsApp">
+        <svg class="site-nav__wa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9 8.5 8.5 0 0 1 8.5 8.5z"/></svg><span class="site-nav__wa-text">WhatsApp</span>
+      </a>
+      <a class="site-nav__tg" href="https://t.me/easyspainuaru" target="_blank" rel="noopener noreferrer" aria-label="Telegram-канал" title="Telegram-канал">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="19" r="2"/><path d="M3 13a8 8 0 0 1 8 8M3 7a14 14 0 0 1 14 14"/></svg>
+      </a>
+      <a class="site-nav__tg" href="https://t.me/EasySpainAdmin_bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram-бот" title="Telegram-бот для заявок">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><circle cx="9" cy="13" r="1.2" fill="currentColor"/><circle cx="15" cy="13" r="1.2" fill="currentColor"/><path d="M12 7V4M10 4h4"/></svg>
+      </a>
+    </div>
   </div>
   <script>(function(){var p=location.pathname;var k=(p==='/'||p==='/index.html')?'home':p.indexOf('/services')===0?'services':p.indexOf('/blog')===0?'blog':'';if(k){var l=document.querySelector('.site-nav__links a[data-page="'+k+'"]');if(l)l.classList.add('active');}})();</script>
 </header>
