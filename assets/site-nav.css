@@ -25,6 +25,9 @@ body:has(> header.site-nav) {
   margin-bottom: 20px;
   font-family: -apple-system, 'Inter', sans-serif;
   color: #EDF1F8;
+  /* Изолируем header от наследуемого line-height родителя
+     (страницы могут задавать body { line-height: 1.6 } и т.п.) */
+  line-height: normal;
 }
 
 .site-nav__inner {
