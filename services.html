@@ -1108,6 +1108,36 @@
     @media (min-width: 1280px) {
       .page { padding-left: 40px; padding-right: 40px; }
     }
+
+    /* ── Кастомные SVG-иконки (line-style, унифицированы с index) ── */
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .icon-md { width: 22px; height: 22px; }
+    .icon-lg { width: 28px; height: 28px; }
+    .icon-gold { color: #C4952A; }
+
+    /* Языковые бейджи (вместо эмодзи-флагов) */
+    .id-langs {
+      display: inline-flex;
+      gap: 4px;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      font-size: 11px;
+      color: #C4952A;
+    }
+    .id-langs span {
+      padding: 2px 6px;
+      border: 1px solid rgba(196, 149, 42, 0.35);
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -1151,18 +1181,28 @@
 
     <!-- ── Identity line ── -->
     <div class="identity-line" aria-label="Идентичность">
-      <span class="id-piece">👤 <strong>Daniil Pavlovskyi</strong></span>
+      <span class="id-piece">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+        <strong>Daniil Pavlovskyi</strong>
+      </span>
       <span class="id-sep">·</span>
-      <span class="id-piece">📍 Аликанте</span>
+      <span class="id-piece">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Аликанте
+      </span>
       <span class="id-sep">·</span>
       <span class="id-piece">6 лет в Испании</span>
       <span class="id-sep">·</span>
-      <span class="id-piece id-flags">🇪🇸 🇷🇺 🇺🇦 🇬🇧</span>
+      <span class="id-piece">
+        <span class="id-langs"><span>ES</span><span>RU</span><span>UA</span><span>EN</span></span>
+      </span>
     </div>
 
     <!-- ── Value prop banner (УПП) ── -->
     <div class="value-prop">
-      <div class="value-prop-icon">⚡</div>
+      <div class="value-prop-icon icon-gold">
+        <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      </div>
       <div class="value-prop-text">
         <strong>Доверенность сразу на вашем языке</strong>
         <span>Без отдельного переводчика. 30 минут у нотариуса — у конкурентов только на испанском.</span>
@@ -1179,7 +1219,9 @@
 
     <!-- ── Guarantee badge ── -->
     <div class="guarantee-badge">
-      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-icon icon-gold">
+        <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
       <div class="guarantee-text">
         <strong>Ошибка с моей стороны — возвращаю всё</strong>
         <span>Без сроков, без вопросов. Если задержка со стороны клиента или госоргана — довожу до результата вместе с вами.</span>
@@ -1200,7 +1242,7 @@
                 <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
                 <span class="card-title">Нотариус — доверенность</span>
               </div>
-              <span class="badge-recommended">✦ Основная услуга</span>
+              <span class="badge-recommended">★ Основная услуга</span>
             </div>
           </div>
           <div class="tier-table">
@@ -1406,24 +1448,30 @@
       <div class="section-label"><span class="label-dot"></span>Почему ко мне</div>
       <div class="why-list">
         <div class="why-item">
-          <div class="why-icon">🤝</div>
+          <div class="why-icon icon-gold">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.5 7.5l3 9M16.5 7.5l-3 9"/></svg>
+          </div>
           <div class="why-text">
-            <strong>Знаком в нотариате и банках</strong>
-            <span>За годы работы — прямые контакты в нотариальных конторах и отделениях банков. Это сокращает сроки и убирает «ваш случай нестандартный».</span>
+            <strong>Прямые контакты в нотариате и банках</strong>
+            <span>За годы работы — личные связи в нотариальных конторах и отделениях банков. Это сокращает сроки и убирает формулировку «ваш случай нестандартный».</span>
           </div>
         </div>
         <div class="why-item">
-          <div class="why-icon">📈</div>
+          <div class="why-icon icon-gold">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>
+          </div>
           <div class="why-text">
-            <strong>570+ кейсов в год</strong>
-            <span>170 доверенностей, 300 счетов, 100 ВНЖ — каждая задача знакома до уровня «знаю, что спросят и в какой бумажке копаться».</span>
+            <strong>1000+ закрытых задач за 6 лет</strong>
+            <span>Доверенности, счета, ВНЖ, легализация — каждый тип задачи знаком до уровня «знаю, что спросят и в какой бумажке копаться».</span>
           </div>
         </div>
         <div class="why-item">
-          <div class="why-icon">🇪🇸</div>
+          <div class="why-icon icon-gold">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
+          </div>
           <div class="why-text">
             <strong>База в Аликанте, выезжаю по стране</strong>
-            <span>Барселона, Мадрид, Валенсия, Малага — выезжаю на сделку. Перевожу: 🇪🇸 🇷🇺 🇺🇦 🇬🇧.</span>
+            <span>Барселона, Мадрид, Валенсия, Малага — выезжаю на сделку. Языки работы: испанский, русский, украинский, английский.</span>
           </div>
         </div>
       </div>
@@ -1564,7 +1612,7 @@
 
     <!-- ── Blog cross-strip ── -->
     <section class="blog-cross-strip">
-      <div class="section-label"><span class="label-dot"></span>📖 Подробнее в блоге</div>
+      <div class="section-label"><span class="label-dot"></span>Подробнее в блоге</div>
       <div class="blog-cross-list">
         <a class="blog-cross-link" href="/blog/apostil-perevod.html">Апостиль и перевод документов</a>
         <a class="blog-cross-link" href="/blog/bank-nerezident.html">Открытие счёта нерезиденту</a>
