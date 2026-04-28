@@ -1,0 +1,102 @@
+/* Inline-CTA блок для блог-статей Krepko
+ * Вставляется на ~50% длины контента, между h2-секциями.
+ * Brand: #C4952A on #171C28, со светлым текстом #EDF1F8.
+ */
+
+.inline-cta {
+  margin: 36px 0;
+  padding: 22px 24px 20px;
+  background: linear-gradient(135deg,
+    rgba(196, 149, 42, 0.10) 0%,
+    rgba(196, 149, 42, 0.03) 100%);
+  border: 1px solid rgba(196, 149, 42, 0.4);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inline-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(196, 149, 42, 0.8),
+    transparent);
+}
+
+.inline-cta__header {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: rgba(237, 241, 248, 0.6);
+  margin: 0 0 6px;
+  text-transform: none;
+}
+
+.inline-cta__offer {
+  font-size: 17px;
+  line-height: 1.45;
+  color: #EDF1F8;
+  margin: 0 0 18px;
+  font-weight: 500;
+}
+
+.inline-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #C4952A;
+  color: #171C28 !important;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  border-bottom: none !important;
+}
+
+.inline-cta__btn:hover {
+  background: #d6a838;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(196, 149, 42, 0.35);
+}
+
+.inline-cta__btn:active {
+  transform: translateY(0);
+}
+
+.inline-cta__alt {
+  font-size: 13px;
+  color: rgba(237, 241, 248, 0.45);
+  margin: 14px 0 0;
+}
+
+.inline-cta__alt a {
+  color: rgba(237, 241, 248, 0.7);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(237, 241, 248, 0.25);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.inline-cta__alt a:hover {
+  color: #C4952A;
+  border-bottom-color: rgba(196, 149, 42, 0.5);
+}
+
+@media (max-width: 600px) {
+  .inline-cta {
+    margin: 28px 0;
+    padding: 20px 18px 18px;
+  }
+  .inline-cta__offer {
+    font-size: 16px;
+  }
+  .inline-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
