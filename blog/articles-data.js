@@ -1,4 +1,4 @@
-/* EasySpain Blog — centralized articles registry */
+/* Krepko Blog — centralized articles registry */
 var ARTICLES = [
   // ВНЖ / Статус
   { slug: 'vnzh-ispaniya',              title: 'Как получить ВНЖ в Испании: полный гид для украинцев',          tag: 'ВНЖ · Статус',            cat: 'vnzh',    time: 7 },

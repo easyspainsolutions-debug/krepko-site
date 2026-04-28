@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EasySpain — Analytics module
+   Krepko — Analytics module
    Лёгкий wrapper над gtag() для трекинга поведения пользователя.
    Подключается на всех страницах. GA4 ID: G-8F3TB9QMLY (уже в HTML).
    ========================================================================== */
@@ -103,9 +103,9 @@
   function autoCTAFromHref(a) {
     var href = a.getAttribute('href') || '';
     if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp.com') > -1) return 'cta_click_whatsapp';
-    if (href.indexOf('t.me/EasySpainAdmin_bot') > -1) return 'cta_click_bot';
-    if (href.indexOf('t.me/easyspainuaru') > -1) return 'cta_click_channel';
-    if (href.indexOf('t.me/easyspain_chat') > -1) return 'cta_click_chat';
+    if (href.indexOf('t.me/krepko_admin_bot') > -1) return 'cta_click_bot';
+    if (href.indexOf('t.me/krepko') > -1) return 'cta_click_channel';
+    if (href.indexOf('t.me/krepko_chat') > -1) return 'cta_click_chat';
     if (href.indexOf('mailto:') === 0) return 'cta_click_email';
     if (href.indexOf('instagram.com') > -1) return 'cta_click_instagram';
     return null;

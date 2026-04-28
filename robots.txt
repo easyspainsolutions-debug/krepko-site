@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://easyspain.solutions/sitemap.xml
+Sitemap: https://krepko.es/sitemap.xml
